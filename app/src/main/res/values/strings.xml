@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Taller3</string>
+
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_contrasenia">Contraseña</string>
+    <string name="hint_nombres">Nombre</string>
+    <string name="hint_correo">Correo</string>
+    <string name="hint_nueva_contrasenia">Nueva Contraseña</string>
+    <string name="hint_repetir_contrasenia">Repetir Contraseña</string>
+    <string name="hint_diireccion">Direccion</string>
+    <string name="hint_fecha_nacimiento">Fecha de Nacimiento</string>
+
+    <string name="btn_aceptar">Aceptar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_nuevo_usuario">Nuevo Usuario</string>
+
+    <string name="lbl_olvido">Olvido su contraseña</string>
+
+    <string-array name="spiner_ciudad">
+        <item>..: Ciudad :..</item>
+        <item>Guayaquil</item>
+        <item>Quito</item>
+        <item>Manta</item>
+        <item>Machala</item>
+        <item>Loja</item>
+        <item>Esmeraldas</item>
+        <item>Cuenca</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

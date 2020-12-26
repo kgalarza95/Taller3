@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".frmNuevoUsuario"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginTop="40dp"
+        android:text="Nuevo Usuario"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="111dp" />
+
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_nombres"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txtEdad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Edad"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/txtTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Teléfono"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/txtCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_correo"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/txtContrasenia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_contrasenia"
+        android:inputType="textPassword" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/fecha_nacimiento"
+            android:layout_width="239dp"
+            android:layout_height="32dp"
+            android:hint="Fecha Nacimiento"
+            android:text="" />
+
+        <Button
+            android:id="@+id/btnCalendario"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="abrirDialogoFecha"
+            android:text="Calendario" />
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinnerCiudades"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textAlignment="center" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="eventoRadiosButtons">
+
+        <RadioButton
+            android:id="@+id/rBtnMasculino"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:hint="Sexo"
+            android:onClick="eventoRadiosButtons"
+            android:text="Mascullino" />
+
+        <RadioButton
+            android:id="@+id/rBtnFeminino"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:hint="Sexo"
+            android:onClick="eventoRadiosButtons"
+            android:text="Femenino" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="eventoBotones"
+            android:text="Registrar" />
+
+        <Button
+            android:id="@+id/btnAtras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="eventoBotones"
+            android:text="@string/btn_cancelar" />
+    </LinearLayout>
+
+</LinearLayout>
