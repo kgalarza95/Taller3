@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".frmNuevoUsuario"
     android:orientation="vertical">
+
 
     <TextView
         android:id="@+id/textView3"
@@ -19,14 +21,26 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="111dp" />
 
-    <EditText
-        android:id="@+id/txtNombre"
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/hint_nombres"
-        android:inputType="textPersonName" />
+        >
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_nombres"
+            android:inputType="textPersonName" />
 
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
     <EditText
         android:id="@+id/txtEdad"
         android:layout_width="match_parent"
@@ -34,7 +48,12 @@
         android:ems="10"
         android:hint="Edad"
         android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
     <EditText
         android:id="@+id/txtTelefono"
         android:layout_width="match_parent"
@@ -42,7 +61,12 @@
         android:ems="10"
         android:hint="Teléfono"
         android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
     <EditText
         android:id="@+id/txtCorreo"
         android:layout_width="match_parent"
@@ -50,7 +74,12 @@
         android:ems="10"
         android:hint="@string/hint_correo"
         android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
     <EditText
         android:id="@+id/txtContrasenia"
         android:layout_width="match_parent"
@@ -58,18 +87,24 @@
         android:ems="10"
         android:hint="@string/hint_contrasenia"
         android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="59dp"
         android:orientation="horizontal">
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
         <TextView
             android:id="@+id/fecha_nacimiento"
             android:layout_width="239dp"
             android:layout_height="32dp"
             android:hint="Fecha Nacimiento"
             android:text="" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnCalendario"
