@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,9 +15,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.regex.Pattern;
+
 public class frmNuevoUsuario extends AppCompatActivity {
 
-    String miSpinnerLebel;
+    private String  miSpinnerLebel;
     private EditText txtNombre;
     private EditText txtEdad ;
     private EditText txtTelefono;
@@ -25,8 +30,15 @@ public class frmNuevoUsuario extends AppCompatActivity {
     private TextView txtFecha;
     private RadioButton rbMasculino;
     private RadioButton rbFemenino ;
+    private TextInputLayout impNombre;
+    private TextInputLayout impEdad;
+    private TextInputLayout impTelefono;
+    private TextInputLayout impCorreo;
+    private TextInputLayout impContrasenia;
+    private TextInputLayout impFecha;
 
-
+    //validaciones
+    boolean isCorreo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +53,12 @@ public class frmNuevoUsuario extends AppCompatActivity {
         txtFecha = (TextView) findViewById(R.id.fecha_nacimiento);
         rbMasculino = (RadioButton)  findViewById(R.id.rBtnMasculino);
         rbFemenino = (RadioButton)  findViewById(R.id.rBtnFeminino);
+        impNombre = (TextInputLayout) findViewById(R.id.impNombre);
+        impEdad = (TextInputLayout) findViewById(R.id.impEdad);
+        impTelefono = (TextInputLayout) findViewById(R.id.impTelefono);
+        impCorreo = (TextInputLayout) findViewById(R.id.impCorreo);
+        impContrasenia = (TextInputLayout) findViewById(R.id.impContrasenia);
+        impFecha = (TextInputLayout) findViewById(R.id.impFechaNacimiento);
         llenarSpinner();
     }
 
@@ -99,7 +117,28 @@ public class frmNuevoUsuario extends AppCompatActivity {
     public void eventoBotones(View v){
         switch (v.getId()){
             case R.id.btnRegistrar:
-                Toast.makeText(this, "Se registro correctamente", Toast.LENGTH_SHORT).show();
+
+                if (Patterns.EMAIL_ADDRESS.matcher(txtCorreo.getText().toString()).matches()){//validacion predefinida de correo
+                    isCorreo = true;
+                    impCorreo.setError(null);
+                }
+                else{
+                    impCorreo.setError("Correo Invalido");
+                    isCorreo = false;
+                }
+
+                Pattern patron = Pattern.compile("[0-9][0-9][0-9]");// ingresar 3 numeros del 0 al 9
+                if(patron.matcher(txtContrasenia.getText().toString()).matches()){//validacion de 3 numeros
+                    impContrasenia.setError("Digite 3 números");
+                }else{
+                    impContrasenia.setError(null);
+                }
+
+
+                if (isCorreo)  {
+                    Toast.makeText(this, "Se registro correctamente", Toast.LENGTH_SHORT).show();
+                }
+
                 break;
             case R.id.btnAtras:
                 Toast.makeText(this, "Cancelado por el usuario", Toast.LENGTH_SHORT).show();
