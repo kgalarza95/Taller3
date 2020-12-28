@@ -149,7 +149,7 @@ public class frmNuevoUsuario extends AppCompatActivity {
 
 
     private void limpiarPantalla(){
-        //txtNombre.setText("");
+        txtNombre.setText("");
         txtEdad.setText("");
         txtTelefono.setText("");
         txtCorreo.setText("");
